@@ -1,0 +1,43 @@
+server:
+  port: 8080
+  
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
+  instance:
+    hostname: localhost
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: P_ClientesBD
+          uri: lb://P_CLIENTESBD
+          predicates:
+            - Path=/clientes/**
+        - id: P_FacturacionBD
+          uri: lb://P_FACTURACIONBD
+          predicates:
+            - Path=/factura/**, /facturaDetalle/**
+        - id: P_NotificacionesBD
+          uri: lb://P_NOTIFICACIONESBD
+          predicates:
+            - Path=/notificacion/**
+        - id: P_PagosBD
+          uri: lb://P_PAGOSBD
+          predicates:
+            - Path=/pagos/**
+        - id: P_ProductosBD
+          uri: lb://P_PRODUCTOSBD
+          predicates:
+            - Path=/productos/**, /subCategoria/**, /categoria/**
+        - id: P_ProveedoresBD
+          uri: lb://P_PROVEEDORESBD
+          predicates:
+            - Path=/proveedores/**
