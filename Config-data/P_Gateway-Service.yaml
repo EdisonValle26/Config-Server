@@ -18,11 +18,11 @@ spring:
           enabled: true
       routes:
         - id: P_ClientesBD
-          uri: lb://P_ClientesBD
+          uri: lb://P_CLIENTESBD
           predicates:
             - Path=/clientes/**
         - id: P_FacturacionBD
-          uri: lb://P_FacturacionBD
+          uri: lb://P_FACTURACIONBD
           predicates:
             - Path=/factura/**, /facturaDetalle/**
         - id: P_NotificacionesBD
