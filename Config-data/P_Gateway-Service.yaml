@@ -21,6 +21,8 @@ spring:
           uri: lb://P-CLIENTESBD
           predicates:
             - Path=/clientes/**
+          filters:
+            - RemoveRequestHeader=Cookie
         - id: P-FacturacionBD
           uri: lb://P-FACTURACIONBD
           predicates:
