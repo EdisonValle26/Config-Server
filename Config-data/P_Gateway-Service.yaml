@@ -24,9 +24,7 @@ spring:
         - id: P-FacturacionBD
           uri: lb://P-FACTURACIONBD
           predicates:
-            - Path=/factura/**, /facturaDetalle/**
-          filters:
-            - RemoveRequestHeader=Cookie            
+            - Path=/factura/**, /facturaDetalle/**       
         - id: P-NotificacionesBD
           uri: lb://P-NOTIFICACIONESBD
           predicates:
@@ -42,9 +40,7 @@ spring:
         - id: P-ProductosBD
           uri: lb://P-PRODUCTOSBD
           predicates:
-            - Path=/productos/**, /subCategoria/**, /categoria/**
-          filters:
-            - RemoveRequestHeader=Cookie            
+            - Path=/productos/**, /subCategoria/**, /categoria/**           
         - id: P-ProveedoresBD
           uri: lb://P-PROVEEDORESBD
           predicates:
