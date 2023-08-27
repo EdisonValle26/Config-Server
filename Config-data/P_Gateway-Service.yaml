@@ -28,15 +28,11 @@ spring:
         - id: P-NotificacionesBD
           uri: lb://P-NOTIFICACIONESBD
           predicates:
-            - Path=/notificacion/**
-          filters:
-            - RemoveRequestHeader=Cookie            
+            - Path=/notificacion/**           
         - id: P-PagosBD
           uri: lb://P-PAGOSBD
           predicates:
-            - Path=/pagos/**
-          filters:
-            - RemoveRequestHeader=Cookie            
+            - Path=/pagos/**           
         - id: P-ProductosBD
           uri: lb://P-PRODUCTOSBD
           predicates:
@@ -44,6 +40,4 @@ spring:
         - id: P-ProveedoresBD
           uri: lb://P-PROVEEDORESBD
           predicates:
-            - Path=/proveedores/**
-          filters:
-            - RemoveRequestHeader=Cookie            
+            - Path=/proveedores/**            
